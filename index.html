@@ -3,6 +3,8 @@
 <head>
 	<title>Exit The Bubble Soon!</title>
 	<style>
+		body, div { margin: 0; padding: 0; }
+
 		#center{
 		    position: fixed;
 		    top: 50%;
@@ -10,9 +12,35 @@
 		    -webkit-transform: translate(-50%, -50%);
 		    transform: translate(-50%, -50%);
 		}​
+
+		#background {
+		    width: 100%; 
+		    height: 100%; 
+		    position: fixed; 
+		    left: 0px; 
+		    top: 0px; 
+		    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+		}
+
+		.stretch {
+		    width:100%;
+		    height:100%;
+		}
+
+		@media screen and (max-width:639px) {
+			.desktop {
+				display:none;
+			}
+			.mobile {
+				display: inline !important;
+			}
+		}
 	</style>
 </head>
 <body>
-	<div id="center">Comming soon!</div>
+	<div id="background">
+	    <img src="desktop.jpg" class="stretch desktop" alt="Comming soon" />
+	    <img style="display:none;" src="mobile.jpg" class="stretch mobile" alt="Comming soon" />
+	</div>
 </body>
 </html>
